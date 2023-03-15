@@ -1,0 +1,22 @@
+{
+  "name": "word-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobpalmborg/word-game.git"
+  },
+  "author": "Jakob Palmborg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakobpalmborg/word-game/issues"
+  },
+  "homepage": "https://github.com/jakobpalmborg/word-game#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
