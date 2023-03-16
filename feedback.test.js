@@ -11,4 +11,18 @@ describe('feedback()', () => {
       ])
   });
 
+  it('result is correct, incorrect or missplaced', () => {
+    const result = feedback('Hello', 'Honey');
+    expect(result).toStrictEqual([
+      { letter: 'H', result: 'correct' },
+      { letter: 'O', result: 'missplaced' },
+      { letter: 'N', result: 'incorrect' },
+      { letter: 'E', result: 'missplaced' },
+      { letter: 'Y', result: 'incorrect' }
+    ])
+  })
+
 })
+
+
+
