@@ -22,6 +22,17 @@ describe('feedback()', () => {
     ])
   })
 
+  it('a letter should be incorrect (not missplaced) when a correct of the same letter is present', () => {
+    const result = feedback('cykla', 'hallå');
+    expect(result).toStrictEqual([
+      { letter: 'H', result: 'incorrect' },
+      { letter: 'A', result: 'missplaced' },
+      { letter: 'L', result: 'incorrect' },
+      { letter: 'L', result: 'correct' },
+      { letter: 'Å', result: 'incorrect' }
+    ])
+  })
+
 })
 
 

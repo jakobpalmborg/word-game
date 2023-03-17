@@ -4,7 +4,7 @@ export default function feedback(correct, guess) {
 
   let result;
 
-  const resultObjects = guessArray.map((letter, index) => {
+  let resultObjects = guessArray.map((letter, index) => {
     if (letter === correctArray[index]) {
       result = "correct";
     } else if (correctArray.includes(letter)) {
@@ -15,6 +15,17 @@ export default function feedback(correct, guess) {
 
     return { letter, result };
   });
+
+    for (let i=0; i < resultObjects.length; i++) {
+      if (resultObjects[i].result === 'missplaced')
+        for (let j=0; j<resultObjects.length; j++) {
+          if (resultObjects[j].letter === resultObjects[i].letter && resultObjects[j].result === 'correct' ) {
+            resultObjects[i].result = 'incorrect'
+          } 
+        } 
+    }
+
+  
 
   return resultObjects;
 }
