@@ -4,12 +4,20 @@ export default function getRandomWord(list, length, noDuplicates = false) {
     let newList1 = [];
     let newList2 = [];
 
+    if (list.length < 1) {
+        return 'no words in list, try again'
+      }
+
     list.map((str) => {
             if (str.length === length) {
             newList1.push(str)
             }
     })
     
+    if (newList1.length < 1) {
+        return 'no words matching length, try again'
+    }
+
     if (noDuplicates === true) {
     
         newList1.map((str) => {
@@ -24,8 +32,12 @@ export default function getRandomWord(list, length, noDuplicates = false) {
         newList2 = newList1
     }     
     
-    let randomNumber = Math.floor(Math.random() * newList2.length);
-    randomWord = newList2[randomNumber];
-    
-    return randomWord
+    if (newList2.length < 1) {
+        return 'no words without duplicates, try again'
+      } else {
+      let randomNumber = Math.floor(Math.random() * newList2.length);
+      randomWord = newList2[randomNumber];
+      
+      return randomWord
+    }
 }

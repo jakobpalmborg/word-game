@@ -16,6 +16,21 @@ describe('getRandomWord()', () => {
         const result = getRandomWord(['aabcd', 'abcde', 'abbcd', 'abcdd'], 5, true);
         expect(result).toBe('abcde')
     })
+    
+    it('if list of words is empty', () => {
+        const result = getRandomWord([], 5);
+        expect(result).toBe('no words in list, try again')
+    })
+  
+    it('no words matching length', () => {
+        const result = getRandomWord(['abc', 'abcd'], 5);
+        expect(result).toBe('no words matching length, try again')
+    })
+   
+    it('no words without duplicates', () => {
+        const result = getRandomWord(['aabcd', 'abbcd', 'abcdd'], 5, true);
+        expect(result).toBe('no words without duplicates, try again')
+    })
 
 
 })
