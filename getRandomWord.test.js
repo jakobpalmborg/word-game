@@ -11,5 +11,11 @@ describe('getRandomWord()', () => {
         const result = getRandomWord(['abc', 'abcd', 'abcde'], 5);
         expect(result).toBe('abcde')
     })
+   
+    it('get word with no duplicates', () => {
+        const result = getRandomWord(['aabcd', 'abcde', 'abbcd', 'abcdd'], 5, true);
+        expect(result).toBe('abcde')
+    })
+
 
 })
